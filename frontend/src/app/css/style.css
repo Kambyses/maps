@@ -1,0 +1,48 @@
+/**
+ * @author: jevgeni.virves@gmail.com
+ * @since: 2017-06-26
+ */
+
+html {
+  width:        100%;
+  height:       100%;
+}
+
+body {
+  width:        100%;
+  height:       100%;
+  margin:       0;
+  overflow:     hidden;
+}
+
+.wrapper {
+  position:     absolute;
+  top:          0;
+  left:         0;
+  right:        0;
+  bottom:       0;
+}
+
+.navi {
+  position:     absolute;
+  top:          0;
+  left:         0;
+  right:        0;
+  height:       40px;
+  padding:      0 15px;
+  line-height:  40px;
+}
+
+.navi a {
+  display:      inline-block;
+  padding:      0 5px;
+}
+
+.view {
+  position:     absolute;
+  top:          40px;
+  left:         0;
+  right:        0;
+  bottom:       0;
+  padding:      20px;
+}

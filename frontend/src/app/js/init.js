@@ -1,3 +1,8 @@
+/**
+ * @author: jevgeni.virves@gmail.com
+ * @since: 2017-06-26
+ */
+
 /*globals require*/
 
 require.config({
