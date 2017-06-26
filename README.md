@@ -1,6 +1,19 @@
 # maps
 
-```install node & npm```
-```npm install grunt -g```
-```npm install```
-```grunt serve --open-browser```
+```javascript
+install node & npm
+```
+
+
+```javascript
+npm install grunt -g
+```
+
+
+```javascript
+npm install
+```
+
+```javascript
+grunt serve --open-browser
+```
