@@ -1,3 +1,6 @@
 # maps
 
-testing 2
+`install node & npm`
+`npm install grunt -g`
+`npm install`
+`grunt serve --open-browser`
