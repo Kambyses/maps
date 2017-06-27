@@ -34,6 +34,7 @@ define(function (require) {
     
       this.navi = new Navi({ "wrapper": this.element });
       this.view = new View({ "wrapper": this.element });
+      this.router = router;
       
       router.events.on("change", this.onRouteChange.bind(this));
       router.start();

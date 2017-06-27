@@ -14,7 +14,7 @@ define(function (require) {
     
     this.options = {
       "values": {
-        "route": null
+        "route": this.parseHash()
       }
     };
     

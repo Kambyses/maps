@@ -10,6 +10,7 @@ define(function (require) {
   
   var
     Class    = require("Class"),
+    router   = require("router"),
     template = require("text!../view/view.html");
 
     
@@ -18,7 +19,7 @@ define(function (require) {
     this.options = {
       "template": template,
       "values": {
-        "route": null
+        "route": router.parseHash(),
       }
     };
     
@@ -28,6 +29,7 @@ define(function (require) {
   View.prototype = {
     
     initialize: function () {
+      this.views = {};
       Class.prototype.initialize.apply(this, arguments);
     },
     
@@ -42,22 +44,27 @@ define(function (require) {
     },
     
     show: function (route) {
+      console.log("show", route);
       switch (route) {
+        case "home":
         case "leaflet.0.7.7":
-          break;
         case "leaflet.1.0.3":
-          break;
         case "mapbox-gl.0.38.0":
-          break;
-        case "openlayers2.13.1":
-          break;
-        case "openlayers4.2.0":
+        case "openlayers.2.13.1":
+        case "openlayers.4.2.0":
+          if (this.views[route]) {
+            $(this.views[route].element).show().siblings().hide();
+            return;
+          }
+          require([ route ], function (View) {
+            this.views[route] = new View({ "wrapper": this.element });
+            this.show(route);
+          }.bind(this));
           break;
         default:
-          route = "home";
+          this.show("home");
           break;
       }
-      this.element.innerHTML = route;
     }
     
   };
